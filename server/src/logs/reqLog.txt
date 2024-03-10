@@ -1,0 +1,3 @@
+20240310	20:10:01	650445eb-33e4-4fff-8d09-e2f26bf848fe	POST	undefined	/register
+20240310	20:13:01	24fc4e4e-9824-48be-b9aa-370f4c07860b	POST	undefined	/auth
+20240310	20:13:11	e6818379-6846-4899-82f6-773bb6baeb8d	GET	undefined	/logout
