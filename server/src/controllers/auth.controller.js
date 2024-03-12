@@ -34,7 +34,7 @@ export const handleSignIn = async (req, res) => {
     }
 
     const foundUser = await User.findOne({ email: email }).exec();
-    if (!foundUser) return res.sendStatus(401); //Unauthorized 
+    if (!foundUser) return res.status(404).json({message:"Account does not exist."}); //user is not exist 
     // evaluate password 
     const isMatch = await bcrypt.compare(pwd, foundUser.password);
     if (isMatch) {
@@ -76,12 +76,12 @@ export const handleSignIn = async (req, res) => {
         console.log(roles);
 
         // Creates Secure Cookie with refresh token
-        res.cookie('jwt', newRefreshToken, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 });
+        res.cookie('jwt', newRefreshToken, { httpOnly: true, secure: true, sameSite: 'None' });
 
         // Send authorization roles and access token to user
         res.json({ roles, accessToken });
 
     } else {
-        res.sendStatus(401);
+        res.status(401).json({message:"Oops! The password you entered is incorrect"});
     }
 }
