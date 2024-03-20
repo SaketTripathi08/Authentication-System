@@ -97,6 +97,7 @@ const Login = () => {
                             value={pwd}
                             required
                             className="custom-input"
+                            autoComplete="current-password"
                         />
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign In</button>
                         <div className="flex items-center mb-4">
