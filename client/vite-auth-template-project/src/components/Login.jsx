@@ -54,7 +54,7 @@ const Login = () => {
             } else if (err.response?.status === 401) {
                 setErrMsg('Oops! The password you entered is incorrect');
             }
-            else if(err.response?.status === 404){
+            else if (err.response?.status === 404) {
                 setErrMsg('Account does not exist');
             } else {
                 setErrMsg('Login Failed');
@@ -72,48 +72,52 @@ const Login = () => {
     }, [persist])
 
     return (
+            <section className="w-full flex justify-center items-center h-screen">
+                <div className="w-full max-w-md p-6 space-y-4 bg-white rounded-lg shadow dark:border dark:border-gray-700 custom-width">
+                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                    <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Sign In</h1>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <label htmlFor="email" className="custom-label">Email</label>
+                        <input
+                            type="text"
+                            id="email"
+                            ref={userRef}
+                            autoComplete="off"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            required
+                            className="custom-input"
+                        />
 
-        <section>
-            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email:</label>
-                <input
-                    type="text"
-                    id="email"
-                    ref={userRef}
-                    autoComplete="off"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    required
-                />
-
-                <label htmlFor="password">Password:</label>
-                <input
-                    type="password"
-                    id="password"
-                    onChange={(e) => setPwd(e.target.value)}
-                    value={pwd}
-                    required
-                />
-                <button>Sign In</button>
-                <div className="persistCheck">
-                    <input
-                        type="checkbox"
-                        id="persist"
-                        onChange={togglePersist}
-                        checked={persist}
-                    />
-                    <label htmlFor="persist">Trust This Device</label>
+                        <label htmlFor="password" className="custom-label">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            onChange={(e) => setPwd(e.target.value)}
+                            value={pwd}
+                            required
+                            className="custom-input"
+                        />
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign In</button>
+                        <div className="flex items-center mb-4">
+                            <input
+                                type="checkbox"
+                                id="persist"
+                                onChange={togglePersist}
+                                checked={persist}
+                                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            />
+                            <label htmlFor="persist" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Trust This Device</label>
+                        </div>
+                    </form>
+                    <p>
+                        Need an Account?
+                        <span className="ml-1 line">
+                            <Link to="/register" className="text-blue-600 hover:underline font-medium">Sign Up</Link>
+                        </span>
+                    </p>
                 </div>
-            </form>
-            <p>
-                Need an Account?<br />
-                <span className="line">
-                    <Link to="/register">Sign Up</Link>
-                </span>
-            </p>
-        </section>
+            </section>
 
     )
 }

@@ -1,6 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
+@layer utilities {
+    .custom-input {
+      @apply bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+    }
+    .custom-label {
+        @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+    }
+
+    .custom-section {
+        @apply w-full flex justify-center items-center h-screen;
+    }
+
+    .custom-wrapper {
+        @apply w-full max-w-lg md:h-96 p-6 bg-white rounded-lg shadow dark:border dark:border-gray-700;
+    }
+
+    .custom-h1 {
+        @apply text-center font-bold
+    }
+   
+  }
+
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -141,4 +166,45 @@ li {
     height: 20px;
     width: 20px;
     margin: 0 5px 2px 2px;
+} */
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
 }

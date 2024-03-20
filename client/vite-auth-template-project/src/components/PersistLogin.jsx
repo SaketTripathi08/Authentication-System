@@ -12,11 +12,12 @@ const PersistLogin = () => {
         "refreshToken",
         refresh,
         {
+            retry:false,
             enabled: !auth?.accessToken && persist
         }
     );
 
-    if(isError) console.error(err);
+    if(isError) console.error(error);
     
     return (
         <>

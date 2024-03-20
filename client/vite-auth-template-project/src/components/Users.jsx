@@ -16,7 +16,7 @@ const Users = () => {
 
   return (
     <article>
-      <h2>Users List</h2>
+      <h2 className="underline">Users List</h2>
       {isLoading ? (
         <p>Loading users...</p>
       ) : isError ? (
