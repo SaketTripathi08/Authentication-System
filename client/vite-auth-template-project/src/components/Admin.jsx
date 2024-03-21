@@ -6,7 +6,7 @@ const Admin = () => {
         <section className="w-full flex justify-center items-center h-screen">
             <div className="w-full max-w-lg md:h-96 lg:h-100 p-6 bg-white rounded-lg shadow dark:border dark:border-gray-700 flex flex-col justify-between">
                 <div>
-                    <h1 className="text-center font-bold">Admins Page</h1>
+                    <h1 className="custom-h1">Admins Page</h1>
                     <br />
                     <Users />
                 </div>

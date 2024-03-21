@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <section className="w-full flex justify-center items-center h-screen">
             <div className="w-full max-w-lg md:h-96 lg:h-100 p-6 bg-white rounded-lg shadow dark:border dark:border-gray-700">
-                <h1 className="text-center font-bold">Home</h1>
+                <h1 className="custom-h1">Home</h1>
                 <br />
                 <p className="mb-7">You are logged in!</p>
                 <br />

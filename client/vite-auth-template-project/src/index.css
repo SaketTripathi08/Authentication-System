@@ -20,7 +20,7 @@
     }
 
     .custom-h1 {
-        @apply text-center font-bold
+        @apply text-center font-bold text-xl	
     }
    
   }

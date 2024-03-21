@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../api/axios';
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import showPassword from "../assets/svgs/showpassword.svg";
 import hidePasword from "../assets/svgs/hidepassword.svg";
 
@@ -15,6 +15,7 @@ const REGISTER_URL = '/register';
 const Register = () => {
     const userRef = useRef();
     const errRef = useRef();
+    const navigate  = useNavigate();
 
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(false);
@@ -44,6 +45,8 @@ const Register = () => {
     const [success, setSuccess] = useState(false);
 
     const [passwordType, setPasswordType] = useState("password");
+
+    const [redirectToLogin, setRedirectToLogin] = useState(false);
 
 
     useEffect(() => {
@@ -76,6 +79,17 @@ const Register = () => {
         setErrMsg('');
     }, [email, pwd, matchPwd])
 
+    useEffect(() => {
+        if (redirectToLogin) {
+          const redirectTimer = setTimeout(() => {
+            navigate("/login"); // Replace "/login" with your actual login page URL
+          }, 5000); 
+    
+          // Clean up the timer when component unmounts or when redirectToLogin changes
+          return () => clearTimeout(redirectTimer);
+        }
+      }, [redirectToLogin]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const v1 = EMAIL_REGEX.test(email);
@@ -97,6 +111,7 @@ const Register = () => {
             );
             console.log(JSON.stringify(response?.data));
             setSuccess(true);
+            setRedirectToLogin(true);
             setEmail('');
             setPwd('');
             setMatchPwd('');
@@ -118,11 +133,14 @@ const Register = () => {
     return (
         <>
             {success ? (
-                <section>
-                    <h1>Success!</h1>
-                    <p>
-                        <Link to="/">Sign In</Link>
-                    </p>
+                <section className="w-full flex justify-center items-center h-screen  bg-gray-100 dark:bg-gray-800">
+                    <div className="w-full max-w-lg xl:max-w-2xl p-6 space-y-4 bg-white rounded-lg shadow dark:border dark:border-gray-700 custom-width">
+                        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-20" role="alert">
+                            <strong className="font-bold">Success!</strong>
+                            <span className="block sm:inline"> You have successfully registered. Welcome aboard!</span>
+                        </div>
+                        <p>Redirecting you to the login page...</p>
+                    </div>
                 </section>
             ) : (
                 <section className="w-full flex justify-center items-center h-screen  bg-gray-100 dark:bg-gray-800" >
@@ -257,9 +275,9 @@ const Register = () => {
                                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 cursor-pointer"
                                             onClick={() => setPasswordType((prev) => !prev)}>
                                             {passwordType ? (
-                                                <img src={hidePasword} alt="Hide"/>
+                                                <img src={hidePasword} alt="Hide" />
                                             ) : (
-                                                <img src={showPassword} alt="Show"/>
+                                                <img src={showPassword} alt="Show" />
                                             )}
                                         </div>
                                     </div>
@@ -296,8 +314,8 @@ const Register = () => {
                                     </p>
                                 </div>
                             </div>
-                            <button disabled={!validEmail || !validFirstName || !validLastName || !validPhone || !validPwd || !validMatch} 
-                            className={`
+                            <button disabled={!validEmail || !validFirstName || !validLastName || !validPhone || !validPwd || !validMatch}
+                                className={`
                             ${(!validEmail || !validFirstName || !validLastName || !validPhone || !validPwd || !validMatch) ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-700'} 
                             text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`} type="submit">
                                 Sign Up
