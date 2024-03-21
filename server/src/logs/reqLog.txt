@@ -953,3 +953,8 @@
 20240321	18:29:18	22275f6b-fd6d-4f3b-8427-5af29ef216f4	GET	http://localhost:5173	/users
 20240321	18:29:18	c6c08dc4-6cdd-454d-a670-48ee9b261b4e	GET	http://localhost:5173	/refresh
 20240321	18:29:18	3d27a9ee-c03f-4324-a8db-c535176f11c3	GET	http://localhost:5173	/users
+20240321	18:30:53	16af432c-9c9b-4b1b-8cce-b7e69b277137	GET	http://localhost:5173	/refresh
+20240321	18:30:53	7aa80ae2-2469-48ec-881f-3b0e04643463	OPTIONS	http://localhost:5173	/users
+20240321	18:30:53	b0b69b73-ddbf-471f-a3d6-e090afe14a32	GET	http://localhost:5173	/users
+20240321	18:39:48	3b683bff-608e-4a02-9b00-8e47ee41f6f3	GET	http://localhost:5173	/refresh
+20240321	18:39:48	f8449999-99b0-472a-ad81-3fff7f570a7c	GET	http://localhost:5173	/refresh
