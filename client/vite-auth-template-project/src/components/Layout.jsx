@@ -1,10 +1,16 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
+import DarkMode from "./DarkMode";
 
 const Layout = () => {
     return (
-        <main className="App">
-            <Outlet />
-        </main>
+        <div className="relative">
+            <div className="absolute top-4 right-4">
+                <DarkMode />
+            </div>
+            <main className="App">
+                <Outlet />
+            </main>
+        </div>
     )
 }
 

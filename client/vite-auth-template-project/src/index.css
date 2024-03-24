@@ -16,11 +16,11 @@
     }
 
     .custom-wrapper {
-        @apply w-full max-w-lg md:h-96 p-6 bg-white rounded-lg shadow dark:border dark:border-gray-700;
+        @apply w-full max-w-lg md:h-96 p-6 bg-white  dark:bg-gray-900 rounded-lg shadow dark:border dark:border-gray-700;
     }
 
     .custom-h1 {
-        @apply text-center font-bold text-xl	
+        @apply text-center font-bold text-xl dark:text-white	
     }
    
   }

@@ -15,7 +15,7 @@ const Users = () => {
     getUsers);
 
   return (
-    <article>
+    <article className="dark:text-white">
       <h2 className="underline">Users List</h2>
       {isLoading ? (
         <p>Loading users...</p>

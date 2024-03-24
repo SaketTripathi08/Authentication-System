@@ -7,7 +7,7 @@ const Unauthorized = () => {
 
     return (
         <section
-            className="h-screen flex flex-col items-center justify-center"
+            className="h-screen flex flex-col items-center justify-center dark:text-white"
         >
             <div className="flex flex-col items-center justify-center">
                 

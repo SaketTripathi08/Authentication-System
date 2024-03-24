@@ -8,7 +8,7 @@ const LinkPage = () => {
                 <div className="grid grid-cols-2 gap-2">
                     <div className="flex flex-col items-center gap-2 mt-0.5">
                         <div className="flex items-center gap-2">
-                            <h2 className="underline">Public</h2>
+                            <h2 className="underline dark:text-white">Public</h2>
                             <svg width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <title>folder_type_public</title>
                                 <path d="M27.5,5.5H18.2L16.1,9.7H4.4V26.5H29.6V5.5Zm0,4.2H19.3l1.1-2.1h7.1Z" style={{ fill: '#00a23c' }} />
@@ -21,7 +21,7 @@ const LinkPage = () => {
                     </div>
                     <div className="flex flex-col justify-center items-center gap-2">
                         <div className="flex items-center gap-2">
-                            <h2 className="underline">Private</h2>
+                            <h2 className="underline dark:text-white">Private</h2>
                             <svg width="40" height="40" viewBox="0 0 24 24" id="Artwork" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12,6.23h0L7.28,8.33v3.15A6.73,6.73,0,0,0,10,16.79a5.75,5.75,0,0,0,2,1h0Z" style={{ fill: '#669df6' }} />
                                 <path d="M12,17.77a6.52,6.52,0,0,0,4.72-6.29V8.33L12,6.23Z" style={{ fill: '#4285f4' }} />

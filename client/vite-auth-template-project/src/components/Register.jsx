@@ -133,18 +133,18 @@ const Register = () => {
     return (
         <>
             {success ? (
-                <section className="w-full flex justify-center items-center h-screen  bg-gray-100 dark:bg-gray-800">
-                    <div className="w-full max-w-lg xl:max-w-2xl p-6 space-y-4 bg-white rounded-lg shadow dark:border dark:border-gray-700 custom-width">
+                <section className="w-full flex justify-center items-center h-screen">
+                    <div className="w-full max-w-lg xl:max-w-2xl p-6 space-y-4 bg-white  dark:bg-gray-900 rounded-lg shadow dark:border dark:border-gray-700 custom-width">
                         <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-20" role="alert">
                             <strong className="font-bold">Success!</strong>
                             <span className="block sm:inline"> You have successfully registered. Welcome aboard!</span>
                         </div>
-                        <p>Redirecting you to the login page...</p>
+                        <p className="dark:text-white">Redirecting you to the login page...</p>
                     </div>
                 </section>
             ) : (
-                <section className="w-full flex justify-center items-center h-screen  bg-gray-100 dark:bg-gray-800" >
-                    <div className="w-full max-w-lg xl:max-w-2xl p-6 space-y-4 bg-white rounded-lg shadow dark:border dark:border-gray-700 custom-width">
+                <section className="w-full flex justify-center items-center h-screen" >
+                    <div className="w-full max-w-lg xl:max-w-2xl p-6 space-y-4 bg-white  dark:bg-gray-900 rounded-lg shadow dark:border dark:border-gray-700 custom-width">
                         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Create an account</h1>
                         <form onSubmit={handleSubmit} className="space-y-4">
@@ -321,7 +321,7 @@ const Register = () => {
                                 Sign Up
                             </button>
                         </form>
-                        <p>
+                        <p className="dark: text-white">
                             Already registered?
                             <span className="ml-1 line">
                                 <Link to="/" className="text-blue-600 hover:underline font-medium">Sign In</Link>

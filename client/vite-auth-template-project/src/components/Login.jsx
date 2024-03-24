@@ -73,7 +73,7 @@ const Login = () => {
 
     return (
             <section className="w-full flex justify-center items-center h-screen">
-                <div className="w-full max-w-md p-6 space-y-4 bg-white rounded-lg shadow dark:border dark:border-gray-700 custom-width">
+                <div className="w-full max-w-md p-6 space-y-4 bg-white dark:bg-gray-900 rounded-lg shadow custom-width">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Sign In</h1>
                     <form onSubmit={handleSubmit} className="space-y-4">
@@ -111,7 +111,7 @@ const Login = () => {
                             <label htmlFor="persist" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Trust This Device</label>
                         </div>
                     </form>
-                    <p>
+                    <p className='dark:text-white'>
                         Need an Account?
                         <span className="ml-1 line">
                             <Link to="/register" className="text-blue-600 hover:underline font-medium">Sign Up</Link>

@@ -5,21 +5,27 @@ import './index.css'
 import { AuthProvider } from './context/AuthProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import { ReactQueryDevtools } from "react-query/devtools";;
 
 const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <AuthProvider>
-          <Routes>
-            <Route path="/*" element={<App />} />
-          </Routes>
-        </AuthProvider>
-      </BrowserRouter>
-      <ReactQueryDevtools initialIsOpen />
-    </QueryClientProvider>
-  </React.StrictMode>,
-)
+const Root = () => {
+  return (
+    <React.StrictMode>
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+            <AuthProvider>
+              <Routes>
+                <Route path="/*" element={<App />} />
+              </Routes>
+            </AuthProvider>
+          </BrowserRouter>
+          <ReactQueryDevtools initialIsOpen />
+        </QueryClientProvider>
+    </React.StrictMode>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Root />);
+
+
