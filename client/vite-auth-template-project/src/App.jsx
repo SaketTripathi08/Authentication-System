@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import useLogout from './hooks/useLogout';;
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
@@ -19,6 +21,12 @@ const ROLES = {
 }
 
 function App() {
+  const { logoutAllTabs } = useLogout();
+
+  useEffect(() => {
+    logoutAllTabs()
+   }, [])
+
 
   return (
     <Routes>
