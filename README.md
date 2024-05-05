@@ -48,12 +48,12 @@ npm run dev
 
 ### Frontend Docker Image
 ```bash
-roneli23/react-app:latest
+docker pull roneli23/react-app:latest
 docker run -p 3000:3000 roneli23/react-app
 ```
 ### Backend Docker Image
 ```bash
-roneli23/express-server:latest
+docker pull roneli23/express-server:latest
 docker run -p 8080:8080 roneli23/express-server
 ```
 
