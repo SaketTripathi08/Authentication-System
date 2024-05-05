@@ -14,23 +14,26 @@ This project is a full-stack application that combines both client-side and serv
 - **Light/dark mode toggle**
 
 ## Technologies Used
-  ### Frontend
-    - HTML, CSS, JavaScript
-    - React.js for building the user interface
-    - React Router for client-side routing
-    - Axios for making HTTP requests with interceptors for global request and response handling
-    - ESLint for code linting
-    - Vite for fast frontend development and building
-    - Tailwind CSS for rapid UI development and styling
-  ### Backend
-    - Node.js with Express.js for building the server-side application
-    - MongoDB as the database for storing user information and tokens
-    - Mongoose for interacting with MongoDB
-    - JSON Web Tokens (JWT) for authentication and authorization
-  ### Development Tools:
-    - Docker for containerization
-    - Docker Compose for defining and running multi-container Docker applications
-    - Docker Hub for storing and sharing Docker images
+
+### Frontend
+- HTML, CSS, JavaScript
+- React.js for building the user interface
+- React Router for client-side routing
+- Axios for making HTTP requests with interceptors for global request and response handling
+- ESLint for code linting
+- Vite for fast frontend development and building
+- Tailwind CSS for rapid UI development and styling
+    
+### Backend
+- Node.js with Express.js for building the server-side application
+- MongoDB as the database for storing user information and tokens
+- Mongoose for interacting with MongoDB
+- JSON Web Tokens (JWT) for authentication and authorization
+    
+### Development Tools:
+- Docker for containerization
+- Docker Compose for defining and running multi-container Docker applications
+- Docker Hub for storing and sharing Docker images
 
 ## Installation
 
