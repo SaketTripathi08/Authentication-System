@@ -25,7 +25,7 @@ export const handleSignUp = async (req, res) => {
 
         //create and store the new user
         const roles = ADMINS.find((admin) => admin.toLocaleLowerCase() === email.toLocaleLowerCase()) ? {User:ROLES_LIST.User, Admin:ROLES_LIST.Admin} : null;
-        const userObj = { email, first_name, last_name, phone_number, phone_number,roles ,password:hashedPwd}
+        const userObj = { email, first_name, last_name, phone_number,roles ,password:hashedPwd}
         const result = await User.create(userObj);
 
         console.log(result);
