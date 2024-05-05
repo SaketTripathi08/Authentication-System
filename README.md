@@ -29,6 +29,7 @@ This project is a full-stack application that combines both client-side and serv
 - MongoDB as the database for storing user information and tokens
 - Mongoose for interacting with MongoDB
 - JSON Web Tokens (JWT) for authentication and authorization
+- ESLint for code linting
     
 ### Development Tools:
 - Docker for containerization
