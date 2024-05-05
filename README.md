@@ -44,6 +44,18 @@ npm run dev
 npm run dev
 ```
 
+## Docker Hub Setup
+
+### Frontend Docker Image
+```bash
+roneli23/react-app:latest
+docker run -p 3000:3000 roneli23/react-app
+```
+### Backend Docker Image
+```bash
+roneli23/express-server:latest
+docker run -p 8080:8080 roneli23/express-server
+```
 
 ## Authors
 
