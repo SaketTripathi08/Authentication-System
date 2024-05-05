@@ -1,6 +1,7 @@
 services:
   react-app:
     build: ./client/vite-auth-template-project
+    image: roneli23/react-app
     ports:
       - 3000:3000
     env_file:
@@ -10,6 +11,7 @@ services:
   
   express-app:
     build: ./server
+    image: roneli23/express-server
     ports:
       - 8080:8080
     environment:
