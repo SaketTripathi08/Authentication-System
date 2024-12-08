@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Full-Stack Authentication System with JWT
 
@@ -83,3 +84,6 @@ docker run -p 8080:8080 roneli23/express-server
 - Github: [@roneli23](https://github.com/roneli23)
 - LinkedIn: [@Ron Eli](https://www.linkedin.com/in/ron-eli-ba47a9226/)
 
+=======
+# Authentication-System
+>>>>>>> 8ac9ed94c5aee1b2cb4d1c14db0bef7f055aa458
